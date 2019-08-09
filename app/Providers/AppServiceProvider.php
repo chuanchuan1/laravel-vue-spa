@@ -15,9 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->runningUnitTests()) {
+        // 设置好的默认的字符串长度，也就是说，迁移中的字段没有设置长度的话，varchar 字段会被默认成长度只有 191 哦！
+        // if ($this->app->runningUnitTests()) {
             Schema::defaultStringLength(191);
-        }
+        // }
     }
 
     /**
